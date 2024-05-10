@@ -2,7 +2,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class ToyShop {
     private List<Toy> toys;
@@ -42,6 +41,15 @@ public class ToyShop {
                 writeToTextFile(prizeToy);
                 return;
             }
+        }
+    }
+
+    private void writeToTextFile(Toy toy) {
+        try (FileWriter writer = new FileWriter("prize_toys.txt", true)) {
+            writer.write("Toy ID: " + toy.getId() + ", Name: " + toy.getName() + "\n");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
     }
 }
