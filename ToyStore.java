@@ -7,7 +7,7 @@ import java.util.Random;
 public class ToyStore {
 
     private List<Toy> toys;
-    private List<Toy> prizeToys;
+    List<Toy> prizeToys;
 
     public ToyStore() {
         toys = new ArrayList<>();
